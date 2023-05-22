@@ -1,0 +1,13 @@
+.image {
+    height: 20px;
+    width: 40px;
+}
+.hidden {
+    
+}
+button {
+    background-color: green;
+    height: 25px;
+    width: 150px;
+    color: aliceblue;
+}

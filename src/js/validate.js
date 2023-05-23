@@ -1,4 +1,4 @@
-export function isValid(number) {
+export function isValidCardHolder(number) {
   var regex = new RegExp('^[0-9]{13}|[0-9]{16}|[0-9]{19}$');
   if (!regex.test(number)) return false;
   return checkCard(number);
@@ -18,3 +18,32 @@ function checkCard(val) {
   if (String(val).indexOf(220) == 0) return 'mir';
   return false;
 }
+export function isValidNumber(setValue) {
+    let ch = 0;
+    const num = String(setValue).replace(/\D/g, '');
+    const isOdd = num.length % 2 !== 0;
+
+    if ('' === num) return false;
+
+    for (let i = 0; i < num.length; i++) {
+        let n = parseInt(num[i], 10);
+
+        ch += (isOdd | 0) === (i % 2) && 9 < (n *= 2) ? (n - 9) : n;
+    }
+
+    return 0 === (ch % 10);
+};
+// function isValid(cardNumber[1..length])
+//     sum := 0
+//     parity := length mod 2
+//     for i from 1 to length do
+//         if i mod 2 != parity then
+//             sum := sum + cardNumber[i]
+//         elseif cardNumber[i] > 4 then
+//             sum := sum + 2 * cardNumber[i] - 9
+//         else
+//             sum := sum + 2 * cardNumber[i]
+//         end if
+//     end for
+//     return sum mod 10 = 0
+// end function

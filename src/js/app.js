@@ -15,7 +15,7 @@ cardinput.addEventListener("keyup", (e) => {
     }
 })
 btnValid.addEventListener("click",(e)=>{
-    e.defaultPrevented;
+    e.preventDefault;;
     if (cardinput.value) {
         if (isValidNumber(cardinput.value)) {
             alert('Номер карты верный')

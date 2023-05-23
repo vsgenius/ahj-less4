@@ -1,4 +1,4 @@
-export default function isValid(number) {
+export function isValid(number) {
   var regex = new RegExp('^[0-9]{13}|[0-9]{16}|[0-9]{19}$');
   if (!regex.test(number)) return false;
 

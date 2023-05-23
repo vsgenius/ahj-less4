@@ -23,3 +23,11 @@ test('should be mir', () => {
   const result = isValid(2200990948233918);
   expect(result).toBe('mir');
 });
+test('should be false', () => {
+  const result = isValid(220099094823);
+  expect(result).toBe(false);
+});
+test('should be false', () => {
+  const result = isValid(3200990948233918);
+  expect(result).toBe(false);
+});
